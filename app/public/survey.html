@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dinner Recipe Finder</title>
+    <title>Recipe Finder</title>
     <!--Mobile Responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Custom CSS -->
@@ -32,10 +32,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="jumbotron centered">
-                    <h1>Dinner Finder Information</h1>
-                    <h3>The age old question! What's for dinner!</h3>
-                    <h5>Fill out the survey 10 question to be matched with the perfect recipe for dinner tonight
-                        <h5>
+                    <h1>Recipe Finder Information</h1>
+                    <h3>The age old question! What should I eat or we eat, the question the plague couples, families and everyone!</h3>
+               
                 </div>
             </div>
         </div>
@@ -44,23 +43,101 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Fill out your Information</h4>
+                        <h4>Fill out this simple survey to find the perfect recipe</h4>
                     </div>
                     <div class="panel-body">
                         <div id="add-dinnerFinder">
                             <form>
-                                <!--Name-->
+                            
+                             <!--Name-->
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input type="text" class="form-control" id="name" placeholder="name">
                                 </div>
-                                <!--Email-->
+                                
                                 <div class="form-group">
-                                    <label for="Role">Email</label>
-                                    <input type="text" class="form-control" id="email" placeholder="email">
-                                </div>
+                                    <label for="Q1">Would you like Breakfest, Brunch, Lunch, Pre-dinner or Dinner?</label>
+                                    <select class="form-control" id="Q1">
+                                        <option value="1">Breakfest</option>
+                                        <option value="2">Brunch</option>
+                                        <option value="3">Lunch</option>
+                                        <option value="4">Pre-Dinner</option>
+                                        <option value="5">Dinner</option>
+                                    </select>
 
-                                <button type="submit" class="btn btn-primary" id="submitDinnerFinder">Submit</button>
+                                <div class="form-group">
+                                    <label for="Q2">Would you like the recipe to be easy(1) or difficult(5)?</label>
+                                    <select class="form-control" id="Q2">
+                                        <option value="1">1(Easy)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5(Difficult)</option>
+                                    </select>
+
+                                 <div class="form-group">
+                                    <label for="Q3">How much time would you like to spend making this meal?</label>
+                                    <select class="form-control" id="Q3">
+                                        <option value="1">15 mins</option>
+                                        <option value="2">30 mins</option>
+                                        <option value="3">1 hour</option>
+                                        <option value="4">2 hours</option>
+                                        <option value="5">3 hours +</option>
+                                    </select>
+                              
+                                    <div class="form-group">
+                                    <label for="Q4">What would you like your protein to be?</label>
+                                    <select class="form-control" id="Q4">
+                                        <option value="1">Chicken</option>
+                                        <option value="2">Fish</option>
+                                        <option value="3">Pork</option>
+                                        <option value="4">Tofu</option>
+                                        <option value="5">Beef</option>
+                                    </select>
+
+                                 <div class="form-group">
+                                    <label for="Q5">How many ingredient would you like to use?</label>
+                                    <select class="form-control" id="Q5">
+                                        <option value="1">3 ingredients</option>
+                                        <option value="2">4 ingredients</option>
+                                        <option value="3">5 ingredients</option>
+                                        <option value="4">6 ingredients</option>
+                                        <option value="5">7 ingredients +</option>
+                                    </select>
+
+                                <div class="form-group">
+                                    <label for="Q6">Would you like a Low carbohydrates(1) or High carbohydrates(5) or something inbetween recipe?</label>
+                                    <select class="form-control" id="Q6">
+                                        <option value="1">1(Low Carb)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5(High Carb)</option>
+                                    </select>
+                                
+                                    <div class="form-group">
+                                        <label for="Q7">Would you like a Low fat(1)  or High fat(5) or something inbetween recipe?</label>
+                                        <select class="form-control" id="Q7">
+                                            <option value="1">1(Low fat)</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5(High fat)</option>
+                                        </select>
+
+                                        <div class="form-group">
+                                        <label for="Q8">Would you like it Spicy(5), Mild(3), Not Spicy(1) or something inbetween recipe?</label>
+                                        <select class="form-control" id="Q8">
+                                            <option value="1">1(Low Spicy)</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3(Mild)</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5(Not Spicy</option>
+                                        </select>
+
+
+
+                               <br> <button type="submit" class="btn btn-primary" id="submitSurvey">Submit</button> <br>
                             </form>
 
                         </div>
@@ -77,3 +154,53 @@
             <i class="fab fa-github"></i> See project on Github</p>
     </footer>
     </div>
+    </body>
+
+<script type="text/javascript">
+
+
+     $(".submitSurvey").on("click", function(event) { 
+         event.preventDefault(); 
+
+         alert("finding the perfect recipe now!");
+
+         var recipeRequester ={
+             Question1: $("#Q1").val().trim(),
+             Question2: $("#Q2").val().trim(),
+             Question3: $("#Q3").val().trim(),
+             Question4: $("#Q4").val().trim(),
+             Question5: $("#Q5").val().trim(),
+             Question6: $("#Q6").val().trim(),
+             Question7: $("#Q7").val().trim(),
+             Question8: $("#Q8").val().trim(),
+            
+         }
+
+         console.log("submit button is clicked")
+
+     
+        $.post("/api/recipeFound", recipeRequester,
+            function (data) {
+
+                // If a table is available... tell user we have have found the prefect recipe match and show it to them.
+                if (data) {
+                    alert("Yay! We have found the perfect recipe for you!");
+                }
+
+                // No match.
+                else {
+                    alert("Sorry we were unable to find a recipe for you...");
+                }
+
+                // Clear the form when submitting
+            $("#Q1").val();
+            $("#Q2").val();
+            $("#Q3").val();
+            $("#Q4").val();
+            $("#Q5").val();
+            $("#Q6").val();
+            $("#Q7").val()
+            $("#Q8").val()
+
+            });
+    });

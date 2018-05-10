@@ -5,6 +5,7 @@
 
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -13,6 +14,7 @@ var bodyParser = require("body-parser");
 
 // Tells node that we are creating an "express" server
 var app = express();
+
 
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 8080;
@@ -27,14 +29,18 @@ app.use(bodyParser.json());
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+var apiRoutes1 = require("./app/route/apiRoutes")(app);
+var mainRoutes = require("./app/route/htmlRoutes")(app);
 
 // =============================================================================
 // LISTENER
 // The below code effectively "starts" our server
-// =============================================================================
+// ============================================================================
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
+function newFunction() {
+    require("./routing/htmlRoutes")(app);
+}
+
